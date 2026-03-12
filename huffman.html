@@ -1,0 +1,62 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Huffman Coding</title>
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+input{
+    padding: 10px;
+    width: 300px;
+}
+button{
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+#output{
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Huffman Coding Generator</h2>
+
+<input type="text" id="textInput" placeholder="Enter text">
+<br>
+<button onclick="generate()">Generate Huffman Code</button>
+
+<div id="output"></div>
+
+<script>
+
+function generate(){
+
+let text = document.getElementById("textInput").value;
+let freq = {};
+
+// Count frequency
+for(let char of text){
+    freq[char] = (freq[char] || 0) + 1;
+}
+
+let output = "<h3>Character Frequencies</h3>";
+
+for(let char in freq){
+    output += char + " : " + freq[char] + "<br>";
+}
+
+document.getElementById("output").innerHTML = output;
+
+}
+
+</script>
+
+</body>
+</html>
+```
